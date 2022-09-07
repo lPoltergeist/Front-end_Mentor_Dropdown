@@ -1,66 +1,86 @@
 import React,{ useState } from 'react'
-import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './styles';
-import {FaBars} from 'react-icons/fa'
-import {AiOutlineClose} from 'react-icons/ai'
-import Logo from '../../images/logo.svg'
-import ArrowUp from '../../images/icon-arrow-up.svg'
-import ArrowDown from '../../images/icon-arrow-down.svg'
-import {DropdownFeature, DropdownCompany} from '../Dropdown/Dropdown';
-import Sidebar from '../SideMenu/Sidebar';
+import { SidebarData } from '../Data/Menuitem'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { FaBars } from 'react-icons/fa'
 
 
-
-const Navbar = () => {
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const [Feature, setFeature] = useState(false);
-  const HandleFeature = () => setFeature(!Feature);
-
-  const [Company, setCompany] = useState(false);
-  const HandleCompany = () => setCompany(!Company);
-  
+const Navbar = ({toggleDrawer}) => {
 
   return (
-    <>
-            <Nav>
-                <NavLink to="/">
-                  <img className="Logoimg" src={Logo} />
-                </NavLink>
-                <Bars onClick={handleMenu}>
-                {isMenuOpen ? <AiOutlineClose/> : <FaBars/>}
-                {isMenuOpen && <Sidebar/>}
-                  </Bars>
-                  
-                
-                
-                <NavMenu>
-                  <NavLink  onClick={HandleFeature} activeStyle>
-                    Feature {Feature ? <img src={ArrowUp}/> : <img src={ArrowDown}/>}
-                    {Feature && <DropdownFeature/>}
-                  </NavLink>
-                  <NavLink onClick={HandleCompany} activeStyle>
-                    Company {Company ? <img src={ArrowUp}/> : <img src={ArrowDown}/>}
-                    {Company && <DropdownCompany/>}
-                  </NavLink>
-                  <NavLink activeStyle>
-                    Careers
-                  </NavLink>
-                  <NavLink activeStyle>
-                    About
-                  </NavLink>
-                </NavMenu>
+    <SNavbar>
+      <NavContainer>
+        <SNavBarBrand>Logo</SNavBarBrand>
+        <RightNav><NavRoutes>
+        {SidebarData.map((route) => (
+        <NavRoute to={route.link} key={route.name}>
+          {route.name}
+          </NavRoute>))}</NavRoutes>
+          <LoginButton>Register</LoginButton>
+          </RightNav>
+          <DrawerButton onClick={toggleDrawer}>
+          <FaBars/>
+        </DrawerButton>
+      </NavContainer>
 
-                <NavBtn>
-                <NavLink to="" activeStyle>
-                    Login
-                  </NavLink>
-                  <NavBtnLink to="">Register</NavBtnLink>
-                </NavBtn>
-            </Nav>
-            </>
+            </SNavbar>
   )
 }
 
 export default Navbar
+
+const DrawerButton = styled.button`
+all: unset;
+font-size: 3rem;
+display: grid;
+@media (min-width: 768px){
+  display: none;
+}`
+
+const SNavbar = styled.nav`
+background-color: transparent;
+`
+const NavContainer = styled.div`
+padding: 1rem;
+max-width: 1300px;
+height: 80px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: gray;`
+
+const SNavBarBrand = styled.div`
+font-size: 3rem;`
+
+const RightNav = styled.div`
+display: flex;
+gap: 2rem;`
+
+const NavRoutes = styled.div`
+@media (max-width: 768px){
+  display: none;
+}
+gap: 1rem;
+display: flex;
+font-size: 2rem;
+align-items: center;`
+
+const NavRoute = styled(Link)`
+text-decoration: none;
+color: gray;
+padding: 0.5rem;
+transition: 0.5s ease;`
+
+const LoginButton = styled.button`
+padding: 0.7rem 3rem;
+background-color: black;
+color: white;
+border: 1px solid white;
+border-radius: 3rem;
+
+&:hover {
+  transition: 0.3s ease;
+
+}
+`

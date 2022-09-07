@@ -6,82 +6,63 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
   {
-    title: 'Feature',
-    path: '/feature',
+    name: 'Feature',
+    link: '/',
 
-    subNav: [
+    subRoutes: [
       {
-        title: 'Todo List',
-        path: '/todoLit',
+        name: 'Todo List',
+        link: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Revenue',
-        path: '/overview/revenue',
+        name: 'Revenue',
+        link: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Reminders',
-        path: '/todoLit',
+        name: 'Reminders',
+        link: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Planning',
-        path: '/todoLit',
+        name: 'Planning',
+        link: '/',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
-    title: 'Company',
-    path: '/reports',
+    name: 'Company',
+    link: '/',
 
-    subNav: [
+    subRoutes: [
       {
-        title: 'History',
-        path: '/reports/reports1',
+        name: 'History',
+        link: '/',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },
       {
-        title: 'Our Team',
-        path: '/reports/reports2',
+        name: 'Our Team',
+        link: '/',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },
       {
-        title: 'Blog',
-        path: '/reports/reports3',
+        name: 'Blog',
+        link: '/',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
-    title: 'Careers',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />
+    name: 'Careers',
+    link: '/',
   },
   {
-    title: 'About',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />
+    name: 'About',
+    link: '/',
   }
 ]
 
-export const CompanyItem =[
-    {
-        title: 'History',
-        path: '/history',
-        cName: 'dropdown-link'
-    },
-    {
-        title: 'Our Team',
-        path: '/team',
-        cName: 'dropdown-link'
-    },
-    {
-        title: 'Blog',
-        path: '/blog',
-        cName: 'dropdown-link'
-    }
-]
