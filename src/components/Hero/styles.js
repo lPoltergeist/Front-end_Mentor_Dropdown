@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 display: flex;
-width: 80%;
 margin: 5rem auto;
 
 img {
@@ -16,7 +15,7 @@ aside {
     background-image: url(image-hero-desktop.png);
     background-size: contain;
     background-repeat: no-repeat;
-    max-width: 500px;
+    max-width: 400px;
     width: 100vw;
 
 }
@@ -44,8 +43,10 @@ button {
 
 export const HeroSection = styled.div`
 display: flex;
-margin: 0 auto;
+margin: auto;
 max-width: 90vw;
+
+
 
 @media screen and (max-width: 1100px) {
     display: flex;
@@ -57,9 +58,12 @@ max-width: 90vw;
 `
 
 export const TextContainer = styled.div`
-margin-right: 5rem;
 align-items: center;
 font-family: 'Roboto', sans-serif;
+
+@media screen and (min-width: 400px) {
+    
+}
 
 .MobileHero {
     @media screen and (min-width: 1100px) {
@@ -90,13 +94,18 @@ max-width: 40rem;
 `
 
 export const Clients = styled.div`
+display: flex;
 align-items: center;
-justify-content: center;
+justify-content: start;
 margin: 4rem 0 0 0;
+
+@media screen and (max-width: 500px) {
+    display: block;
+}
 
     img {
         margin: 0 auto;
-    width: 15%;
+    width: 100px;
     height: auto;
     margin: 10px 20px;
     

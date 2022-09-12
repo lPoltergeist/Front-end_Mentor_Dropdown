@@ -1,87 +1,51 @@
-import React from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
-import * as RiIcons from 'react-icons/ri';
-
-export const SidebarData = [
+export const route = [
   {
-    title: 'Feature',
-    path: '/feature',
-
-    subNav: [
+    name: "Feature",
+    link: "/",
+    subRoutes: [
       {
-        title: 'Todo List',
-        path: '/todoLit',
-        icon: <IoIcons.IoIosPaper />
+        name: "Todo List",
+        link: "/service/web-development",
       },
       {
-        title: 'Revenue',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
+        name: "Calendar",
+        link: "/service/mobile-development",
       },
       {
-        title: 'Reminders',
-        path: '/todoLit',
-        icon: <IoIcons.IoIosPaper />
+        name: "Reminders",
+        link: "/service/ui-ux-design",
       },
       {
-        title: 'Planning',
-        path: '/todoLit',
-        icon: <IoIcons.IoIosPaper />
+        name: "Planning",
+        link: "/planning"
       }
     ]
   },
   {
-    title: 'Company',
-    path: '/reports',
+    name: "Company",
+    link: "/company",
 
-    subNav: [
+    subRoutes: [
       {
-        title: 'History',
-        path: '/reports/reports1',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
+        name: "History",
+        link: "/history",
       },
       {
-        title: 'Our Team',
-        path: '/reports/reports2',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
+        name: "Our Team",
+        link: "/team",
       },
       {
-        title: 'Blog',
-        path: '/reports/reports3',
-        icon: <IoIcons.IoIosPaper />
-      }
-    ]
+        name: "Blog",
+        link: "/blog",
+      },
+    ],
   },
   {
-    title: 'Careers',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />
+    name: "Products",
+    link: "/products",
   },
   {
-    title: 'About',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />
-  }
-]
-
-export const CompanyItem =[
-    {
-        title: 'History',
-        path: '/history',
-        cName: 'dropdown-link'
-    },
-    {
-        title: 'Our Team',
-        path: '/team',
-        cName: 'dropdown-link'
-    },
-    {
-        title: 'Blog',
-        path: '/blog',
-        cName: 'dropdown-link'
-    }
-]
+    name: "Contact Us",
+    link: "/contact",
+  },
+];
